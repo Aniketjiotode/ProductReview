@@ -33,7 +33,8 @@ namespace ProductReviewManagement
             //M.TopRecords(ProductReviewlist);
             //M.FilterRecord(ProductReviewlist);
             //M.RetriveCountOfRecords(ProductReviewlist);
-            M.RetriveIdandReviewRecords(ProductReviewlist);
+            //M.RetriveIdandReviewRecords(ProductReviewlist);
+            M.RetriveSkipRecords(ProductReviewlist);
         }
     }
 }

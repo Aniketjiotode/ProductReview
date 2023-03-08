@@ -35,12 +35,12 @@ namespace ProductReviewManagement
             }
         }
 
-        public void RetriveIdandReviewRecords (List<ProductReview> listproductReviews)
+        public void RetriveSkipRecords (List<ProductReview> listproductReviews)
         {
-            var recordedData = listproductReviews.Select(x => new { productId = x.ProductId, review = x.Review });
+            var recordedData = listproductReviews.Skip(5).ToList();
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine($"ProductId: {Pr.productId}   Review: {Pr.review}");
+                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             }
         }
     }
