@@ -28,6 +28,7 @@ namespace ProductReviewManagement
 
             Management M = new Management();
             M.TopRecords(ProductReviewlist);
+            M.FilterRecord(ProductReviewlist);
         }
     }
 }
