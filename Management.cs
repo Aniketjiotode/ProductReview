@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ProductReviewManagement
 {
@@ -31,6 +32,15 @@ namespace ProductReviewManagement
             foreach (var Pr in recordedData)
             {
                 Console.WriteLine($"ProductId: {Pr.productId}   Count: {Pr.count}");
+            }
+        }
+
+        public void RetriveIdandReviewRecords (List<ProductReview> listproductReviews)
+        {
+            var recordedData = listproductReviews.Select(x => new { productId = x.ProductId, review = x.Review });
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine($"ProductId: {Pr.productId}   Review: {Pr.review}");
             }
         }
     }

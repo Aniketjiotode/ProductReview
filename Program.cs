@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagement
 {
@@ -28,11 +29,11 @@ namespace ProductReviewManagement
             //{
             //    Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             //}
-
             Management M = new Management();
             //M.TopRecords(ProductReviewlist);
             //M.FilterRecord(ProductReviewlist);
-            M.RetriveCountOfRecords(ProductReviewlist);
+            //M.RetriveCountOfRecords(ProductReviewlist);
+            M.RetriveIdandReviewRecords(ProductReviewlist);
         }
     }
 }
