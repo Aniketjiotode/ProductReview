@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -46,28 +47,15 @@ namespace ProductReviewManagement
             }
         }
 
-        DataTable dataTable = new DataTable();
-        public void CreateTable(List<ProductReview> listproductReviews)
+        public void RetriveisLikeRecords()
         {
-            dataTable.Columns.Add("ProductId");
-            dataTable.Columns.Add("UserId");
-            dataTable.Columns.Add("Rating");
-            dataTable.Columns.Add("Review");
-            dataTable.Columns.Add("isLike");
-            foreach (var productReview in listproductReviews)
+            Datatable table = new Datatable();
+            var dataRow = table.dataTable.AsEnumerable().Where(x=>x.Field<string>("isLike")=="True");
+            foreach (DataRow row in dataRow)
             {
-                dataTable.Rows.Add(productReview.ProductId, productReview.UserId, productReview.Rating, productReview.Review, productReview.isLike);
-
-            }
-            foreach (DataRow row in dataTable.Rows)
-            {
+                
                 Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
-
             }
-        }
-        public void RetriveisLikeRecords (List<ProductReview> listproductReviews)
-        {
-
         }
     }
 }

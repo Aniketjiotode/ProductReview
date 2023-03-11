@@ -39,12 +39,13 @@ namespace ProductReviewManagement
             //manager.RetriveIdandReviewRecords(ProductReviewlist);
             //manager.RetriveSkipRecords(ProductReviewlist);
             //manager.CreateTable(ProductReviewlist);
-            Datatable Table= new Datatable();
-            foreach (DataRow row in Table.dataTable.Rows)
-            {
-                Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
+            //Datatable Table= new Datatable();
+            //foreach (DataRow row in Table.dataTable.Rows)
+            //{
+            //    Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
 
-            }
+            //}
+            manager.RetriveisLikeRecords();
         }
     }
 }
