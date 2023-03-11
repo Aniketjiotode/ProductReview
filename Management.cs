@@ -79,5 +79,13 @@ namespace ProductReviewManagement
                 Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.UserId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             }
         }
+        public void RetriveUseridRecords(List<ProductReview> listproductReviews,int id)
+        {
+            var recordedData = listproductReviews.OrderBy(x => x.Rating).Where(x => x.UserId == id);
+            foreach (var Pr in recordedData)
+            {
+                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.UserId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
+            }
+        }
     }
 }

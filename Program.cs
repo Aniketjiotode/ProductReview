@@ -22,13 +22,17 @@ namespace ProductReviewManagement
                 new ProductReview() { ProductId = 7, UserId = 7, Rating = 3.6, Review = "not Good", isLike = false },
                 new ProductReview() { ProductId = 8, UserId = 8, Rating = 4.9, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 9, UserId = 9, Rating = 3.7, Review = "nice", isLike = true },
-                new ProductReview() { ProductId = 10, UserId = 10, Rating = 4.6, Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 10, UserId = 10, Rating = 5, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 11, UserId = 11, Rating = 4.6, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 5, UserId = 12, Rating = 4.6, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 4, UserId = 13, Rating = 4.6, Review = "nice", isLike = true },
                 new ProductReview() { ProductId = 8, UserId = 14, Rating = 4.6, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 12, UserId = 15, Rating = 4.6, Review = "nice", isLike = true },
-                new ProductReview() { ProductId = 8, UserId = 16, Rating = 4.6, Review = "Good", isLike = true }
+                new ProductReview() { ProductId = 12, UserId = 10, Rating = 4.6, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 10, UserId = 10, Rating = 4, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 10, UserId = 10, Rating = 3, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 10, UserId = 10, Rating = 2.6, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 8, UserId = 16, Rating = 4.6, Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 10, UserId = 10, Rating = 3.6, Review = "Good", isLike = true }
             };
             //foreach(ProductReview Pr in ProductReviewlist)
             //{
@@ -48,7 +52,8 @@ namespace ProductReviewManagement
             //}
             //manager.RetriveisLikeRecords();
             //manager.RetriveAverageRatingRecords(ProductReviewlist);
-            manager.RetriveReviewContainsNiceRecords(ProductReviewlist);
+            //manager.RetriveReviewContainsNiceRecords(ProductReviewlist);
+            manager.RetriveUseridRecords(ProductReviewlist, 10);
         }
     }
 }
