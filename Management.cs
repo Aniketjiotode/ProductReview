@@ -8,6 +8,7 @@ namespace ProductReviewManagement
 {
     internal class Management
     {
+
         public void TopRecords(List<ProductReview> listproductReviews)
         {
             var recordedData = (from productReviews in listproductReviews
@@ -36,7 +37,7 @@ namespace ProductReviewManagement
             }
         }
 
-        public void RetriveSkipRecords (List<ProductReview> listproductReviews)
+        public void RetriveSkipRecords(List<ProductReview> listproductReviews)
         {
             var recordedData = listproductReviews.Skip(5);
             foreach (var Pr in recordedData)
@@ -45,9 +46,9 @@ namespace ProductReviewManagement
             }
         }
 
-        public void CreateTable (List<ProductReview> listproductReviews)
+        DataTable dataTable = new DataTable();
+        public void CreateTable(List<ProductReview> listproductReviews)
         {
-            DataTable dataTable= new DataTable();
             dataTable.Columns.Add("ProductId");
             dataTable.Columns.Add("UserId");
             dataTable.Columns.Add("Rating");
@@ -55,14 +56,18 @@ namespace ProductReviewManagement
             dataTable.Columns.Add("isLike");
             foreach (var productReview in listproductReviews)
             {
-                dataTable.Rows.Add(productReview.ProductId,productReview.UserId,productReview.Rating,productReview.Review,productReview.isLike);
-               
+                dataTable.Rows.Add(productReview.ProductId, productReview.UserId, productReview.Rating, productReview.Review, productReview.isLike);
+
             }
-            foreach(DataRow row in dataTable.Rows)
+            foreach (DataRow row in dataTable.Rows)
             {
                 Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
 
             }
+        }
+        public void RetriveisLikeRecords (List<ProductReview> listproductReviews)
+        {
+
         }
     }
 }

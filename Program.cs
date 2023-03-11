@@ -4,12 +4,13 @@ using System.Data;
 
 namespace ProductReviewManagement
 {
-    internal class Program
+    internal  class Program
     {
+        public static List<ProductReview> ProductReviewlist;
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Product Review Management");
-            List<ProductReview> ProductReviewlist = new List<ProductReview>()
+             Program.ProductReviewlist = new List<ProductReview>()
             {
                 new ProductReview() { ProductId = 1, UserId = 1, Rating = 5, Review = "Good", isLike = true},
                 new ProductReview() { ProductId = 2, UserId = 2, Rating = 4.5, Review = "Good", isLike = true },
@@ -31,13 +32,19 @@ namespace ProductReviewManagement
             //{
             //    Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             //}
-            Management M = new Management();
-            //M.TopRecords(ProductReviewlist);
-            //M.FilterRecord(ProductReviewlist);
-            //M.RetriveCountOfRecords(ProductReviewlist);
-            //M.RetriveIdandReviewRecords(ProductReviewlist);
-            //M.RetriveSkipRecords(ProductReviewlist);
-            M.CreateTable(ProductReviewlist);
+            Management manager = new Management();
+            //manager.TopRecords(ProductReviewlist);
+            //manager.FilterRecord(ProductReviewlist);
+            //manager.RetriveCountOfRecords(ProductReviewlist);
+            //manager.RetriveIdandReviewRecords(ProductReviewlist);
+            //manager.RetriveSkipRecords(ProductReviewlist);
+            //manager.CreateTable(ProductReviewlist);
+            Datatable Table= new Datatable();
+            foreach (DataRow row in Table.dataTable.Rows)
+            {
+                Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
+
+            }
         }
     }
 }
