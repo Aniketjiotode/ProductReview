@@ -47,7 +47,8 @@ namespace ProductReviewManagement
             //    Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
             //}
             //manager.RetriveisLikeRecords();
-            manager.RetriveAverageRatingRecords(ProductReviewlist);
+            //manager.RetriveAverageRatingRecords(ProductReviewlist);
+            manager.RetriveReviewContainsNiceRecords(ProductReviewlist);
         }
     }
 }
