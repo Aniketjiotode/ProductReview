@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
@@ -14,7 +15,7 @@ namespace ProductReviewManagement
                                 select productReviews).Take(3);
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
+                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.UserId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             }
         }
         public void FilterRecord(List<ProductReview> listproductReviews)
@@ -22,7 +23,7 @@ namespace ProductReviewManagement
             var recordedData = from ProductReviews in listproductReviews where (ProductReviews.ProductId == 1 || ProductReviews.ProductId == 4 || ProductReviews.ProductId == 9) && ProductReviews.Rating > 3 select ProductReviews;
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
+                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.UserId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             }
         }
 
@@ -37,10 +38,30 @@ namespace ProductReviewManagement
 
         public void RetriveSkipRecords (List<ProductReview> listproductReviews)
         {
-            var recordedData = listproductReviews.Skip(5).ToList();
+            var recordedData = listproductReviews.Skip(5);
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
+                Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.UserId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
+            }
+        }
+
+        public void CreateTable (List<ProductReview> listproductReviews)
+        {
+            DataTable dataTable= new DataTable();
+            dataTable.Columns.Add("ProductId");
+            dataTable.Columns.Add("UserId");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            foreach (var productReview in listproductReviews)
+            {
+                dataTable.Rows.Add(productReview.ProductId,productReview.UserId,productReview.Rating,productReview.Review,productReview.isLike);
+               
+            }
+            foreach(DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
+
             }
         }
     }

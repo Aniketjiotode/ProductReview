@@ -11,6 +11,5 @@ namespace ProductReviewManagement
         public double Rating;
         public string Review;
         public bool isLike;
-
     }
 }
