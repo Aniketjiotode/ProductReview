@@ -17,16 +17,18 @@ namespace ProductReviewManagement
                 new ProductReview() { ProductId = 3, UserId = 3, Rating = 4, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 4, UserId = 4, Rating = 3.5, Review = "not Good", isLike = false },
                 new ProductReview() { ProductId = 5, UserId = 5, Rating = 4.8, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 6, UserId = 5, Rating = 4.4, Review = "nice", isLike = true },
                 new ProductReview() { ProductId = 2, UserId = 6, Rating = 4.2, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 7, UserId = 7, Rating = 3.6, Review = "not Good", isLike = false },
                 new ProductReview() { ProductId = 8, UserId = 8, Rating = 4.9, Review = "Good", isLike = true },
                 new ProductReview() { ProductId = 9, UserId = 9, Rating = 3.7, Review = "nice", isLike = true },
                 new ProductReview() { ProductId = 10, UserId = 10, Rating = 4.6, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 5, UserId = 10, Rating = 4.6, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 4, UserId = 10, Rating = 4.6, Review = "nice", isLike = true },
-                new ProductReview() { ProductId = 8, UserId = 10, Rating = 4.6, Review = "Good", isLike = true },
-                new ProductReview() { ProductId = 12, UserId = 10, Rating = 4.6, Review = "nice", isLike = true },
-                new ProductReview() { ProductId = 8, UserId = 10, Rating = 4.6, Review = "Good", isLike = true }
+                new ProductReview() { ProductId = 11, UserId = 11, Rating = 4.6, Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 5, UserId = 12, Rating = 4.6, Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 4, UserId = 13, Rating = 4.6, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 8, UserId = 14, Rating = 4.6, Review = "Good", isLike = true },
+                new ProductReview() { ProductId = 12, UserId = 15, Rating = 4.6, Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 8, UserId = 16, Rating = 4.6, Review = "Good", isLike = true }
             };
             //foreach(ProductReview Pr in ProductReviewlist)
             //{
@@ -43,9 +45,9 @@ namespace ProductReviewManagement
             //foreach (DataRow row in Table.dataTable.Rows)
             //{
             //    Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
-
             //}
-            manager.RetriveisLikeRecords();
+            //manager.RetriveisLikeRecords();
+            manager.RetriveAverageRatingRecords(ProductReviewlist);
         }
     }
 }

@@ -52,9 +52,23 @@ namespace ProductReviewManagement
             Datatable table = new Datatable();
             var dataRow = table.dataTable.AsEnumerable().Where(x=>x.Field<string>("isLike")=="True");
             foreach (DataRow row in dataRow)
-            {
-                
+            {            
                 Console.WriteLine($"ProductId: {row[0]} UserId: {row[1]} Rating: {row[2]} Review: {row[3]} isLike: {row[4]}");
+            }
+        }
+        public void RetriveAverageRatingRecords(List<ProductReview> listproductReviews)
+        {
+            for(int i = 1; i < listproductReviews.Count; i++)
+            {
+                foreach (var ProductReview in listproductReviews)
+                {
+                    if (ProductReview.ProductId == i)
+                    {
+                        var recordedData = listproductReviews.Where(x => x.ProductId == i).Average(x => x.Rating);
+                        Console.WriteLine($"ProductId: {i} AverageRating: {recordedData}");
+                    }
+                }
+               
             }
         }
     }
